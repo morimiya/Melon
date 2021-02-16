@@ -15,33 +15,33 @@ Author: MoriMiya
 
 ### 资源准备
 1. 在资源管理器中创建Images文件夹，将游戏所需要用到的贴图素材放进去，再将贴图素材Type改为sprite-frame。
-2. ![res](.\img\res.png)
+2. ![res](img/res.png)
 
 ### 场景设置
 1. 在项目设置中配置设计宽度和设计高度，设置为640X960，勾选适配屏幕宽度。
-    - ![项目设置](.\img\项目设置.png)
+    - ![项目设置](img/项目设置.png)
 2. 在资源管理器中创建Scenes文件夹，在下面创建一个Main场景，作为游戏主场景。
 3. 双击进入Main场景，删除自带的Main Camera和Main Light。
 4. 创建一个名为BG的单色Sprite，作为游戏背景。
 5. 在背景BG左边、右边、下边创建单色Sprite，在其中加入RigidBody2D和BoxCollider2D，RigidBody2D的Type设置为Static，以避免其受重力影响而下坠。
-    - ![layermanager](.\img\layermanager.png)
-    - ![rigidbody2d](.\img\wallleft_rigidbody2d.png)
-    - ![boxcollider2d](.\img\wallleft_boxcollider2d.png)
+    - ![layermanager](img/layermanager.png)
+    - ![rigidbody2d](img/wallleft_rigidbody2d.png)
+    - ![boxcollider2d](img/wallleft_boxcollider2d.png)
 6. 在左上角及上方添加分数Score和WarnLine的Label。
 7. 在资源管理器中创建Scripts文件夹，创建GameManager.ts脚本。
 8. 给Canvas添加GameManager脚本组件，将Score和WarnLine两个Label作为脚本的property。
-    - ![gamemanager](.\img\gamemanager.png)
+    - ![gamemanager](img/gamemanager.png)
 9. 至此，场景便完成布置了。
-    - ![背景](.\img\背景.png)
+    - ![背景](img/背景.png)
 
 ### 水果生成
 1. 创建一个名为fruit的Sprite，将SpriteFrame替换为fruit_1。
 
 2. 添加RigidBody2D和CircleCollider2D。
 
-    - ![fruit_rigidbody2d](.\img\fruit_rigidbody2d.png)
+    - ![fruit_rigidbody2d](img/fruit_rigidbody2d.png)
 
-    - ![fruit_circlecollider2d](.\img\fruit_circlecollider2d.png)
+    - ![fruit_circlecollider2d](img/fruit_circlecollider2d.png)
 
 3. 在Script文件夹里面创建Fruit.ts脚本。将该脚本设置为水果的脚本组件。
 
@@ -52,9 +52,9 @@ Author: MoriMiya
 ### 水果合成特效
 1. 创建一个名为juice的Sprite，将SpriteFrame替换为juice_l_1。
 2. 给该sprite添加两个ParticleSystem2D子节点，分别命名为sarcocarp和dewdrop，分别作为果粒和水珠的爆炸特效。
-    - ![juice](.\img\juice.png)
+    - ![juice](img/juice.png)
 3. 调好sarcocarp和dewdrop的粒子参数，调到自己满意即可。
-    - ![juice_sarcocarp_particle](.\img\juice_sarcocarp_particle.png)
+    - ![juice_sarcocarp_particle](img/juice_sarcocarp_particle.png)
 4. 将juice拖到Prefabs文件夹中，让juice成为预制体并将该预制体设置为GameManager.ts的property，方便后续程序动态生成水果合成特效。
 5. 给GameManager创建一个带有水果果粒、水珠、水花SpriteFrame的数组property，在编辑器中逐个编辑好内容。
 6. 给GameManager.ts添加两个AudioClip，放进合成使用的音效，给Canvas添加AudioSource，用于后续脚本播放音效使用。
